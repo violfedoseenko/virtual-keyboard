@@ -16,3 +16,4 @@ keyboardLeyout.classList.add('keyboard_leyout');
 
 title.textContent = 'RSS Виртуальная клавиатура';
 subtitle.textContent = 'Клавиатура создана в операционной системе Windows\nДля переключения языка комбинация: Ctrl + Alt';
+
