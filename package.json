@@ -1,0 +1,29 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "Rolling-scopes-school task: create a virtual keyboard",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint ./src",
+    "lint:fix": "eslint ./src --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/violfedoseenko/virtual-keyboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/violfedoseenko/virtual-keyboard/issues"
+  },
+  "homepage": "https://github.com/violfedoseenko/virtual-keyboard#readme",
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-plugin-html": "^6.2.0",
+    "eslint-plugin-import": "^2.26.0",
+    "webpack": "^5.72.0",
+    "webpack-cli": "^4.9.2"
+  }
+}

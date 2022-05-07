@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+
+}
+h2 {
+    text-align: center;
+}
+
+.keyboard_wrapper {
+    margin: 0 auto;
+    textarea {
+        display:block;
+        width:700px;
+        height:200px;
+        margin:10px auto 10px;
+        padding:10px;
+        font-size:18px;
+        color:#444444;
+    }
+    .keyboard_leyout {
+        width: 704px;
+        margin: 0 auto;
+        border: 3px solid black;
+        border-radius: 5px;
+        padding: 5px;
+        height: 300px;
+    }
+}
