@@ -31,3 +31,33 @@ h2 {
         height: 300px;
     }
 }
+.keyboard {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 5px;
+
+    width: 704px;
+    margin: 0 auto;
+    border: 3px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    height: 300px;
+    .k-key {
+        width: 40px;
+        height: 40px;
+        border: 1px solid black;
+        // margin-right: 6px;
+        padding: 3px;
+        float: left;
+
+    }
+    .Backspace {
+        width: 100px;
+    }
+    // .clearfix {
+    //     display: block;
+    //     width: 100px;
+    //     clear: both;
+    // }
+}
