@@ -33,7 +33,7 @@ class Keyboard {
     keyButtons.forEach((key) => {
       const button = document.createElement('button');
       button.setAttribute('id', key.code);
-      button.classList.add('key', key.code);
+      button.classList.add('my_button', key.code);
 
       button.setAttribute('content_en', key.content.en);
       button.setAttribute('content_ru', key.content.ru);

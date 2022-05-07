@@ -24,40 +24,85 @@ h2 {
     }
     .keyboard_leyout {
         width: 704px;
+        background-color: LightGray ;
         margin: 0 auto;
-        border: 3px solid black;
+        border: 3px solid DimGray ;
         border-radius: 5px;
         padding: 5px;
-        height: 300px;
-    }
-}
-.keyboard {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    column-gap: 5px;
+        // height: 300px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 4px;
+        row-gap: 5px;
+        .my_button {
+            color: #ffffff;
+            background: SlateGray ;
+            border-radius: 3px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            transition: background-color 0.4s;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(286, 110, 60, 0.3);
+            }
+            
+            
+        }
+        .Backspace,
+        .Tab,
+        .Delete,
+        .CapsLock,
+        .Enter,
+        .ShiftLeft,
+        .ShiftRight,
+        .ArrowUp,
+        .ControlLeft,
+        .AltLeft,
+        .AltRight,
+        .ArrowLeft,
+        .ArrowDown,
+        .ArrowRight,
+        .ControlRight {
+            background: DarkSlateGray  ;
+            font-weight: bold;
+        }
 
-    width: 704px;
-    margin: 0 auto;
-    border: 3px solid black;
-    border-radius: 5px;
-    padding: 5px;
-    height: 300px;
-    .k-key {
-        width: 40px;
-        height: 40px;
-        border: 1px solid black;
-        // margin-right: 6px;
-        padding: 3px;
-        float: left;
+
+
+
+
+        .Backspace {
+            width: 100px;
+        }
+        .Tab {
+            width: 50px;
+        }
+        .Delete {
+            width: 50px;
+        }
+        .CapsLock {
+            width: 100px;
+        }
+        .Enter {
+            width: 86px;
+        }
+        .ShiftLeft {
+            width: 100px;
+        }
+        .ShiftRight {
+            width: 86px;
+        }
+        .Space {
+            width: 330px;
+        }
+        .ControlLeft {
+            width: 60px;
+        }
+        .AltLeft {
+            width: 60px;
+        }
 
     }
-    .Backspace {
-        width: 100px;
-    }
-    // .clearfix {
-    //     display: block;
-    //     width: 100px;
-    //     clear: both;
-    // }
 }
