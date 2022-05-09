@@ -55,8 +55,6 @@ class Keyboard {
     });
   }
 
-
-
   addKeyboardListeners() {
     const cursorStart = this.textarea.selectionStart;
     const cursorEnd = this.textarea.selectionEnd;
@@ -65,7 +63,6 @@ class Keyboard {
       if (key) {
         key.classList.add('active');
         keyEvent.preventDefault();
-        console.log(key);
         if (key.getAttribute('character_en') !== 'func' || key.getAttribute('character_ru') !== 'func') {
           this.textarea.value += key.innerText;
         }
@@ -76,7 +73,6 @@ class Keyboard {
             this.textarea.value = str;
           }
         }
-
       }
       if (key.getAttribute('content_en') === 'Enter') {
         let str = this.textarea.value;
@@ -106,9 +102,14 @@ class Keyboard {
           }
         });
       }
+      if (
+        (keyEvent.code === 'ShiftLeft' || keyEvent.code === 'ShiftRight')
+        && !keyEvent.repeat
+      ) this.shiftText(true);
+      else if (keyEvent.code === 'CapsLock' && !keyEvent.repeat) {
+        this.shiftText(false);
+      }
     });
-
-
     document.addEventListener('keyup', (keyButton) => {
       const key = document.getElementById(keyButton.code);
       if (key) {
@@ -123,7 +124,6 @@ class Keyboard {
       });
       document.dispatchEvent(eventKeyDown);
       this.isDown = true;
-      console.log(event.target.id);
     });
 
     this.keyboardLeyout.addEventListener('mouseup', (event) => {
@@ -131,7 +131,6 @@ class Keyboard {
       document.dispatchEvent(eventKeyUp);
       this.isDown = false;
     });
-
   }
 }
 const keyboardObj = new Keyboard(keyboardLeyout, textarea);
