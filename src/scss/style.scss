@@ -37,7 +37,7 @@ h2 {
         row-gap: 5px;
         .my_button {
             color: #ffffff;
-            background: SlateGray ;
+            background: SlateGray;
             border-radius: 3px;
             width: 40px;
             height: 40px;
@@ -46,9 +46,10 @@ h2 {
             cursor: pointer;
             &:hover {
                 background-color: rgba(286, 110, 60, 0.3);
-            }
-            
-            
+            }  
+        }
+        .active {
+            border-radius: 50px;
         }
         .Backspace,
         .Tab,
