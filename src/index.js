@@ -56,6 +56,7 @@ class Keyboard {
   }
 
 
+
   addKeyboardListeners() {
     const cursorStart = this.textarea.selectionStart;
     const cursorEnd = this.textarea.selectionEnd;
@@ -75,6 +76,7 @@ class Keyboard {
             this.textarea.value = str;
           }
         }
+
       }
       if (key.getAttribute('content_en') === 'Enter') {
         let str = this.textarea.value;
@@ -91,13 +93,22 @@ class Keyboard {
         str += ' ';
         this.textarea.value = str;
       }
-      if (key.getAttribute('content_en') === 'Ctrl' && key.getAttribute('content_en') === 'Alt') {
+      if (keyEvent.ctrlKey && keyEvent.altKey) {
         this.language = this.language === 'ru' ? 'en' : 'ru';
         localStorage.setItem('language', this.language);
-        console.log(localStorage);
+        this.keys.forEach((myKey) => {
+          if (this.language === 'en') {
+            const changeLang = myKey;
+            changeLang.innerText = myKey.getAttribute('content_en');
+          } else if (this.language === 'ru') {
+            const changeLang = myKey;
+            changeLang.innerText = myKey.getAttribute('content_ru');
+          }
+        });
       }
     });
-    
+
+
     document.addEventListener('keyup', (keyButton) => {
       const key = document.getElementById(keyButton.code);
       if (key) {
@@ -120,6 +131,7 @@ class Keyboard {
       document.dispatchEvent(eventKeyUp);
       this.isDown = false;
     });
+
   }
 }
 const keyboardObj = new Keyboard(keyboardLeyout, textarea);
