@@ -2,20 +2,20 @@ import keyButtons from './keyButtons.js';
 
 const title = document.createElement('h1');
 const keyboardWrapper = document.createElement('div');
-const textarea = document.createElement('textarea');
-const keyboardLeyout = document.createElement('div');
+const myTextarea = document.createElement('textarea');
+const myKeyboardLeyout = document.createElement('div');
 const subtitle = document.createElement('h2');
 
 document.body.appendChild(title);
 document.body.appendChild(keyboardWrapper);
 document.body.appendChild(subtitle);
 
-keyboardWrapper.appendChild(textarea);
-keyboardWrapper.appendChild(keyboardLeyout);
+keyboardWrapper.appendChild(myTextarea);
+keyboardWrapper.appendChild(myKeyboardLeyout);
 
 keyboardWrapper.classList.add('keyboard_wrapper');
-keyboardLeyout.classList.add('keyboard_leyout');
-textarea.classList.add('textarea');
+myKeyboardLeyout.classList.add('keyboard_leyout');
+myTextarea.classList.add('textarea');
 
 title.textContent = 'RSS Виртуальная клавиатура';
 subtitle.textContent = 'Клавиатура создана в операционной системе Windows\nДля переключения языка комбинация: Ctrl + Alt';
@@ -36,7 +36,6 @@ class Keyboard {
       const button = document.createElement('button');
       button.setAttribute('id', key.code);
       button.classList.add('my_button', key.code);
-      // button.setAttribute('type', 'button');
       button.setAttribute('content_en', key.content.en);
       button.setAttribute('content_ru', key.content.ru);
       button.setAttribute('shift_en', key.shift.en);
@@ -52,6 +51,25 @@ class Keyboard {
 
       this.keyboardLeyout.appendChild(button);
       this.keys.push(button);
+    });
+  }
+
+  shiftText(noCaps) {
+    this.keys.forEach((myKey) => {
+      const key = myKey;
+      if (noCaps || key.getAttribute('character_en') === 'letter') {
+        const buffer = key.getAttribute('content_en');
+        key.setAttribute('content_en', key.getAttribute('shift_en'));
+        key.setAttribute('shift_en', buffer);
+      }
+      if (noCaps || key.getAttribute('character_ru') === 'letter') {
+        const buffer = key.getAttribute('content_ru');
+        key.setAttribute('content_ru', key.getAttribute('shift_ru'));
+        key.setAttribute('shift_ru', buffer);
+      }
+      key.innerText = this.language === 'en'
+        ? key.getAttribute('content_en')
+        : key.getAttribute('content_ru');
     });
   }
 
@@ -133,10 +151,10 @@ class Keyboard {
     });
   }
 }
-const keyboardObj = new Keyboard(keyboardLeyout, textarea);
+const keyboardObj = new Keyboard(myKeyboardLeyout, myTextarea);
 keyboardObj.generateButtons();
 
 keyboardObj.addKeyboardListeners();
 
-textarea.onblur = () => textarea.focus();
-textarea.focus();
+myTextarea.onblur = () => myTextarea.focus();
+myTextarea.focus();
