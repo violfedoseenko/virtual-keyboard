@@ -1,0 +1,109 @@
+* {
+    box-sizing: border-box;
+}
+
+
+h1 {
+    text-align: center;
+
+}
+h2 {
+    text-align: center;
+}
+
+.keyboard_wrapper {
+    margin: 0 auto;
+    textarea {
+        display:block;
+        width:700px;
+        height:200px;
+        margin:10px auto 10px;
+        padding:10px;
+        font-size:18px;
+        color:#444444;
+    }
+    .keyboard_leyout {
+        width: 704px;
+        background-color: LightGray ;
+        margin: 0 auto;
+        border: 3px solid DimGray ;
+        border-radius: 5px;
+        padding: 5px;
+        // height: 300px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        column-gap: 4px;
+        row-gap: 5px;
+        .my_button {
+            color: #ffffff;
+            background: SlateGray;
+            border-radius: 3px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            transition: background-color 0.4s;
+            cursor: pointer;
+            &:hover {
+                background-color: rgba(286, 110, 60, 0.3);
+            }  
+        }
+        .active {
+            border-radius: 50px;
+        }
+        .Backspace,
+        .Tab,
+        .Delete,
+        .CapsLock,
+        .Enter,
+        .ShiftLeft,
+        .ShiftRight,
+        .ArrowUp,
+        .ControlLeft,
+        .AltLeft,
+        .AltRight,
+        .ArrowLeft,
+        .ArrowDown,
+        .ArrowRight,
+        .ControlRight {
+            background: DarkSlateGray  ;
+            font-weight: bold;
+        }
+
+
+
+
+
+        .Backspace {
+            width: 100px;
+        }
+        .Tab {
+            width: 50px;
+        }
+        .Delete {
+            width: 50px;
+        }
+        .CapsLock {
+            width: 100px;
+        }
+        .Enter {
+            width: 86px;
+        }
+        .ShiftLeft {
+            width: 100px;
+        }
+        .ShiftRight {
+            width: 86px;
+        }
+        .Space {
+            width: 330px;
+        }
+        .ControlLeft {
+            width: 60px;
+        }
+        .AltLeft {
+            width: 60px;
+        }
+
+    }
+}
